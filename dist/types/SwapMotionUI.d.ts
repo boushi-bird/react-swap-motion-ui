@@ -7,8 +7,10 @@ interface Props<T> {
     onSwapPosition: (newItems: T[], target: T, direction: MoveDirection) => void;
     renderMovePreviousButton?: (onClick: MouseEventHandler<Element>) => ReactNode;
     renderMoveNextButton?: (onClick: MouseEventHandler<Element>) => ReactNode;
+    transitionDuration?: string;
+    transitionTimingFunction?: string;
     className?: string;
     children?: ReactNode;
 }
-export declare function SwapMotionUI<T>({ index, items, onSwapPosition, renderMovePreviousButton, renderMoveNextButton, className, children, }: Props<T>): import("react/jsx-runtime").JSX.Element;
+export declare function SwapMotionUI<T>({ index, items, onSwapPosition, renderMovePreviousButton, renderMoveNextButton, transitionDuration, transitionTimingFunction, className, children, }: Props<T>): import("react/jsx-runtime").JSX.Element;
 export {};

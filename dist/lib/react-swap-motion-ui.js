@@ -512,6 +512,8 @@ function SwapMotionUI({
   onSwapPosition,
   renderMovePreviousButton,
   renderMoveNextButton,
+  transitionDuration,
+  transitionTimingFunction,
   className,
   children
 }) {
@@ -533,16 +535,18 @@ function SwapMotionUI({
     if (prevPositionRef.current) {
       const deltaX = prevPositionRef.current.x - x;
       const deltaY = prevPositionRef.current.y - y;
-      elementRef.current.style.transition = "";
+      elementRef.current.style.transitionDuration = "";
+      elementRef.current.style.transitionTimingFunction = "";
       elementRef.current.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
       requestAnimationFrame(() => {
         if (!elementRef.current) return;
-        elementRef.current.style.transition = "transform 1000ms ease";
+        elementRef.current.style.transitionDuration = transitionDuration || "300ms";
+        elementRef.current.style.transitionTimingFunction = transitionTimingFunction || "ease";
         elementRef.current.style.transform = "";
       });
     }
     prevPositionRef.current = { x, y };
-  }, [index]);
+  }, [index, transitionDuration, transitionTimingFunction]);
   const handleSwapPosition = (direction) => {
     const newItems = [...items];
     const firstIndex = direction === "prev" ? index - 1 : index;
