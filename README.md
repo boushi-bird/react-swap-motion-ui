@@ -6,7 +6,7 @@
 
 ```shell
 npm i react react-dom
-npm i boushi-bird/react-swap-motion-ui#0.0.2
+npm i boushi-bird/react-swap-motion-ui#0.0.3
 ```
 
 ## 利用方法
