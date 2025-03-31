@@ -581,7 +581,8 @@ function SwapMotionUI({
       children: ">"
     }
   ));
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${className} swap-motion-ui`, ref: elementRef, children: [
+  const classNames = [className, "swap-motion-ui"].filter(Boolean);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: classNames.join(" "), ref: elementRef, children: [
     children,
     /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "swap-motion-ui-panel", children: [
       !first && effectiveRenderMovePreviousButton(() => handleSwapPosition("prev")),
