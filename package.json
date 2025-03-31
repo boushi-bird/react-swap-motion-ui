@@ -5,7 +5,15 @@
   "files": [
     "dist"
   ],
+  "browser": "./dist/lib/react-swap-motion-ui.umd.cjs",
+  "main": "./dist/lib/react-swap-motion-ui.umd.cjs",
+  "module": "./dist/lib/react-swap-motion-ui.js",
+  "exports": {
+    "import": "./dist/lib/react-swap-motion-ui.js",
+    "require": "./dist/lib/react-swap-motion-ui.umd.cjs"
+  },
   "type": "module",
+  "types": "./dist/types/main.d.ts",
   "scripts": {
     "fmt": "prettier --write '**/*.{ts,tsx}'",
     "build": "tsc -b && vite build",
@@ -27,6 +35,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "prettier": "^3.5.3",
+    "terser": "^5.39.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",

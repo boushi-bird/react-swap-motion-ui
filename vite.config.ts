@@ -9,6 +9,17 @@ export default defineConfig({
       entry: "src/main.ts",
       name: "ReactSwapMotionUi",
     },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+    outDir: "dist/lib",
+    minify: "terser",
   },
   plugins: [react(), cssInjectedByJsPlugin()],
 });
