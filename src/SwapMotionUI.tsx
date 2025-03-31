@@ -115,8 +115,10 @@ export function SwapMotionUI<T>({
       </button>
     ));
 
+  const classNames = [className, "swap-motion-ui"].filter(Boolean);
+
   return (
-    <span className={`${className} swap-motion-ui`} ref={elementRef}>
+    <span className={classNames.join(" ")} ref={elementRef}>
       {children}
       <span className="swap-motion-ui-panel">
         {!first &&
