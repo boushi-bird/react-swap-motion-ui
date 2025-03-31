@@ -20,7 +20,7 @@
   },
   "scripts": {
     "fmt": "prettier --write '**/*.{ts,tsx}'",
-    "build": "tsc -b && vite build",
+    "build": "rm -rf dist/types && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"
