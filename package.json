@@ -1,5 +1,5 @@
 {
-  "name": "react-swap-motion-ui",
+  "name": "@boushi-bird/react-swap-motion-ui",
   "version": "0.0.1",
   "license": "MIT",
   "files": [
@@ -9,11 +9,15 @@
   "main": "./dist/lib/react-swap-motion-ui.umd.cjs",
   "module": "./dist/lib/react-swap-motion-ui.js",
   "exports": {
+    "types": "./dist/types/main.d.ts",
     "import": "./dist/lib/react-swap-motion-ui.js",
     "require": "./dist/lib/react-swap-motion-ui.umd.cjs"
   },
   "type": "module",
   "types": "./dist/types/main.d.ts",
+  "publishConfig": {
+    "@boushi-bird:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "fmt": "prettier --write '**/*.{ts,tsx}'",
     "build": "tsc -b && vite build",
